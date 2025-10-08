@@ -1,18 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    }
   <meta charset="UTF-8" />
   <title>Encryption & Decryption</title>
   <style>
-    body { font-family: Arial, sans-serif; padding: 20px; max-width: 600px; margin: auto; }
-    input, textarea, button { margin: 10px 0; width: 100%; padding: 8px; box-sizing: border-box; }
-    button { cursor: pointer; border-radius: 8px; border: none; background: #4CAF50; color: white; font-size: 16px; }
+      /* Moving Wallpaper Background */
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+      color: white;
+      position: relative;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(270deg, #1e3c72, #2a5298, #0f2027, #203a43, #2c5364);
+      background-size: 1000% 1000%;
+      animation: gradientMove 20s ease infinite;
+      z-index: -1;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h2, h3 { text-align: center; }
+    .box {
+      background: rgba(0, 0, 0, 0.6);
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+    input, textarea, button {
+      margin: 10px 0;
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+      border-radius: 6px;
+      border: none;
+    }
+    textarea, input {
+      background: rgba(255,255,255,0.9);
+      color: black;
+    }
+    button {
+      cursor: pointer;
+      background: #4CAF50;
+      color: white;
+      font-size: 16px;
+      transition: 0.3s;
+    }
     button:hover { background: #45a049; }
+    .result {
+      font-weight: bold;
+      white-space: pre-wrap;
+      background: rgba(255, 255, 255, 0.9);
+      color: black;
+      padding: 10px;
+      border-radius: 6px;
+   
   </style>
 </head>
 <body>
   <h2>Encryption and Decryption</h2>
-  <h3>By Hari Kumar</h3>
 
   <label for="message">Enter message:</label>
   <textarea id="message" rows="3" placeholder="Type your message here..."></textarea>
